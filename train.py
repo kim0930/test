@@ -11,6 +11,16 @@ from trainer import Trainer
 from utils import prepare_device
 
 
+
+######################################
+# 아래 오류 해결 위함/ 아래 오류 발생 안하면 삭제해도 무방 / 원래 없던 코드임. by THKIM 2022.03.05
+'''
+OMP: Error #15: Initializing libiomp5md.dll, but found libiomp5md.dll already initialized
+'''
+import os
+os.environ['KMP_DUPLICATE_LIB_OK']='True'
+######################################
+
 # fix random seeds for reproducibility
 SEED = 123
 torch.manual_seed(SEED)
